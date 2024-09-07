@@ -1,47 +1,18 @@
-import { Badge, Divider, IconButton, Toolbar, Typography } from '@mui/material'
-import React from 'react'
-import { Menu as MenuIcon, Notifications, AccountCircleSharp } from '@mui/icons-material'
+import React from "react";
+import { AppBar } from '@mui/material'
+import { Toolbar } from '@mui/material'
+import { Typography } from '@mui/material'
 
-const useStyles = {
-  flexGrow:1, 
-  fontSize:20, 
-  textTransform:"uppercase", 
-  justifyContent:"center", 
-  fontFamily:"Montserrat",
-}
-
-const Header = () => {
+function Header() {
   return (
-    <>
+    <AppBar position="static">
       <Toolbar>
-        <IconButton color='inherit'>
-          <MenuIcon/>
-        </IconButton>
-
-        <Typography 
-          variant='h6' 
-          sx={useStyles}>
-          Blogging Website
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Simple Blog
         </Typography>
-
-        <IconButton>
-          <Badge badgeContent={4} color="error">
-            <Notifications/>
-          </Badge> 
-        </IconButton>
-
-        <IconButton>
-          <AccountCircleSharp/>
-        </IconButton>
-
       </Toolbar>
-
-        <Divider />
-
-        <Toolbar sx={useStyles}>Express your emotions through words</Toolbar>
-    
-    </>
-  )
+    </AppBar>
+  );
 }
 
-export default Header
+export default Header;
